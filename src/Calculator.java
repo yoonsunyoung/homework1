@@ -30,6 +30,11 @@ public class Calculator {
 		int result = subtractionFirstNum - subtractionSecondNum;		
 		System.out.println(result);
 	}
+	
+	public static void multiply(int multiplicationFirstNum, int multiplicationSecondNum){		
+		int result = multiplicationFirstNum * multiplicationSecondNum;		
+		System.out.println(result);
+	}
 
 	
 	public static void main(String[] args) {
@@ -57,6 +62,9 @@ public class Calculator {
 					break;			
 				case 2:
 					subtract(firstInput, lastInput);
+					break;
+				case 3:
+					multiply(firstInput, lastInput);
 					break;
 				}
 			}
