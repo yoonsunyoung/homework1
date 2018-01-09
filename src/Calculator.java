@@ -10,11 +10,13 @@ public class Calculator {
 		System.out.println("3. Multiply two numbers");
 		System.out.println("4. Quit");
 		
+		System.out.print(">");
+		
 		Scanner scan = new Scanner(System.in);
 		
 		int menu;
 		menu = scan.nextInt();
-		
+
 		return menu;
 	}
 	
@@ -34,8 +36,8 @@ public class Calculator {
 		
 		int menuNum, firstInput, lastInput;
 		
-		do{
-			menuNum = menu();
+		do{			
+			menuNum = menu();			
 			
 			if(menuNum == 4){
 				System.out.println("프로그램이 종료되었습니다.");
@@ -57,7 +59,9 @@ public class Calculator {
 					subtract(firstInput, lastInput);
 					break;
 				}
-			}	
+			}
+				
+			
 		
 		}while(menuNum != 4);
 	}
