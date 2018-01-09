@@ -18,31 +18,48 @@ public class Calculator {
 		return menu;
 	}
 	
+	
 	public static void add(int addFirstNum, int addSecondNum){		
 		int result = addFirstNum + addSecondNum;		
 		System.out.println(result);
 	}
+	
+	public static void subtract(int subtractionFirstNum, int subtractionSecondNum){		
+		int result = subtractionFirstNum - subtractionSecondNum;		
+		System.out.println(result);
+	}
 
+	
 	public static void main(String[] args) {
 		
 		int menuNum, firstInput, lastInput;
 		
-		menuNum = menu();
+		do{
+			menuNum = menu();
+			
+			if(menuNum == 4){
+				System.out.println("프로그램이 종료되었습니다.");
+			}
+			else{
+				Scanner scan = new Scanner(System.in);
+				
+				System.out.print("x: ");
+				firstInput = scan.nextInt();
+				
+				System.out.print("y: ");
+				lastInput = scan.nextInt();		
+				
+				switch(menuNum){
+				case 1:
+					add(firstInput, lastInput);
+					break;			
+				case 2:
+					subtract(firstInput, lastInput);
+					break;
+				}
+			}	
 		
-		if(menuNum == 4){
-			System.out.println("프로그램이 종료되었습니다.");
-		}
-		else{
-			Scanner scan = new Scanner(System.in);
-			
-			System.out.print("x: ");
-			firstInput = scan.nextInt();
-			
-			System.out.print("y: ");
-			lastInput = scan.nextInt();		
-			
-			add(firstInput, lastInput);
-		}
+		}while(menuNum != 4);
 	}
 
 }
