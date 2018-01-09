@@ -17,11 +17,27 @@ public class Calculator {
 		
 		return menu;
 	}
+	
+	public static void add(int addFirstNum, int addSecondNum){		
+		int result = addFirstNum + addSecondNum;		
+		System.out.println(result);
+	}
 
 	public static void main(String[] args) {
-		int menuNum;
+		
+		int menuNum, firstInput, lastInput;
 		
 		menuNum = menu();
+		
+		Scanner scan = new Scanner(System.in);
+		
+		System.out.print("x: ");
+		firstInput = scan.nextInt();
+		
+		System.out.print("y: ");
+		lastInput = scan.nextInt();		
+		
+		add(firstInput, lastInput);
 	}
 
 }
