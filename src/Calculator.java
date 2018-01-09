@@ -29,15 +29,20 @@ public class Calculator {
 		
 		menuNum = menu();
 		
-		Scanner scan = new Scanner(System.in);
-		
-		System.out.print("x: ");
-		firstInput = scan.nextInt();
-		
-		System.out.print("y: ");
-		lastInput = scan.nextInt();		
-		
-		add(firstInput, lastInput);
+		if(menuNum == 4){
+			System.out.println("프로그램이 종료되었습니다.");
+		}
+		else{
+			Scanner scan = new Scanner(System.in);
+			
+			System.out.print("x: ");
+			firstInput = scan.nextInt();
+			
+			System.out.print("y: ");
+			lastInput = scan.nextInt();		
+			
+			add(firstInput, lastInput);
+		}
 	}
 
 }
