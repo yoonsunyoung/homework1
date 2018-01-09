@@ -12,10 +12,10 @@ public class Calculator {
 		
 		Scanner scan = new Scanner(System.in);
 		
-		int num;
-		num = scan.nextInt();
+		int menu;
+		menu = scan.nextInt();
 		
-		return num;
+		return menu;
 	}
 
 	public static void main(String[] args) {
