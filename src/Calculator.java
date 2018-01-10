@@ -2,6 +2,16 @@ import java.util.Scanner;
 import java.util.InputMismatchException;
 
 public class Calculator {
+	public static int GetInput(){
+		try{
+			Scanner scan = new Scanner(System.in);
+			return scan.nextInt();
+		}
+		catch(InputMismatchException ie){
+			return -1;
+		}		
+	}
+	
 	public static int menu(){
 		System.out.println("[ ID: 1413911 ]");
 		System.out.println("[ Name: 윤선영   ]");
@@ -13,18 +23,11 @@ public class Calculator {
 
 		System.out.print(">");
 		
-		Scanner scan = new Scanner(System.in);
-		
 		int menu;
 		
-		try{
-			menu = scan.nextInt();
-			return menu;
-		}
-		catch(InputMismatchException ie){
-			return -1;
-		}			
+		menu = GetInput();
 		
+		return menu;		
 	}
 	
 	
@@ -58,14 +61,12 @@ public class Calculator {
 				if(menuNum == 4){
 					System.out.println("프로그램이 종료되었습니다.");
 				}
-				else{
-					Scanner scan = new Scanner(System.in);
-					
+				else{					
 					System.out.print("x: ");
-					firstInput = scan.nextInt();
+					firstInput = GetInput();
 					
 					System.out.print("y: ");
-					lastInput = scan.nextInt();		
+					lastInput = GetInput();
 					
 					switch(menuNum){
 					case 1:
