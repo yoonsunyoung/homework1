@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.InputMismatchException;
 
 public class Calculator {
 	public static int menu(){
@@ -15,9 +16,15 @@ public class Calculator {
 		Scanner scan = new Scanner(System.in);
 		
 		int menu;
-		menu = scan.nextInt();
 		
-		return menu;
+		try{
+			menu = scan.nextInt();
+			return menu;
+		}
+		catch(InputMismatchException ie){
+			return -1;
+		}			
+		
 	}
 	
 	
@@ -37,38 +44,46 @@ public class Calculator {
 	public static void main(String[] args) {
 		
 		int menuNum, firstInput, lastInput;
-		int result = 0;
+		int result;
 		
 		do{
+			result = 0;
+			
 			menuNum = menu();
 			
-			if(menuNum == 4){
-				System.out.println("프로그램이 종료되었습니다.");
-			}
+			if((menuNum == -1) || ((menuNum != 1) && (menuNum != 2) && (menuNum != 3) && (menuNum != 4))){
+				System.out.println("올바른 숫자를 입력하세요.");
+			}			
 			else{
-				Scanner scan = new Scanner(System.in);
-				
-				System.out.print("x: ");
-				firstInput = scan.nextInt();
-				
-				System.out.print("y: ");
-				lastInput = scan.nextInt();		
-				
-				switch(menuNum){
-				case 1:
-					result = add(firstInput, lastInput);
-					break;
-				case 2:
-					result = subtract(firstInput, lastInput);
-					break;
-				case 3:
-					result = multiply(firstInput, lastInput);
-					break;
+				if(menuNum == 4){
+					System.out.println("프로그램이 종료되었습니다.");
 				}
-				
-				System.out.println("The result is "+ result);
-			}	
-		
+				else{
+					Scanner scan = new Scanner(System.in);
+					
+					System.out.print("x: ");
+					firstInput = scan.nextInt();
+					
+					System.out.print("y: ");
+					lastInput = scan.nextInt();		
+					
+					switch(menuNum){
+					case 1:
+						result = add(firstInput, lastInput);
+						break;
+					case 2:
+						result = subtract(firstInput, lastInput);
+						break;
+					case 3:
+						result = multiply(firstInput, lastInput);
+						break;
+					}
+					
+					System.out.println("The result is "+ result);
+				}	
+
+			}
+					
 		}while(menuNum != 4);
 	}
 
